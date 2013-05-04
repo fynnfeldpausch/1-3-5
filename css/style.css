@@ -120,6 +120,12 @@ footer {
 #middle li { margin: .4em 0; }
 #little li { margin: .2em 0; }
 
+#date:before { content: "saved "; }
+#date:after { content: "|"; }
+#date:after, .devider {
+  margin: 0 .75em;
+}
+
 .unselectable {
   -webkit-user-select: none;     
   -moz-user-select: none;
