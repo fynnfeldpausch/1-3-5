@@ -8,8 +8,8 @@ var app = {
 
   init: function() {
     $(".row li").hover(
-      function () { $(this).addClass('hover'); },
-      function () { $(this).removeClass('hover'); }
+      function(e) { $(this).addClass('hover'); },
+      function(e) { $(this).removeClass('hover'); }
     );
     $('.row .box').click(
       function(e) { app.toggle($(this)); }
@@ -29,25 +29,23 @@ var app = {
       function() { if (app.dirty) { app.save(); } }, 2500
     );
     app.load();
+    app.showDate();
   },
 
   toggle: function($box) {
     var $li = $($box.parents('li'));
-    if ($li.find('input').val() == "") {
+    if ($li.find('input').val() === "") {
       return;
     } else if ($li.hasClass('checked')) {
-      $li.removeClass('checked');
-      $li.find('input').attr('readonly', false);
+      $li.removeClass('checked').find('input').attr('readonly', false);
       app.store.delete($li.attr('id'));
     } else {
-      $li.addClass('checked');
-      $li.find('input').attr('readonly', true);
+      $li.addClass('checked').find('input').attr('readonly', true);
       app.store.set($li.attr('id'), true);
     }
   },
 
   load: function() {
-    app.showDate();
     $('.row input').each(function(i) {
       $(this).val(app.store.get($(this).parents('li').attr('id') + '-txt'));
     });
@@ -84,7 +82,7 @@ var app = {
   showDate: function() {
     var date = app.store.get('date');
     if (!date) {
-      $('#date').html("").attr('title', '');
+      $('#date').remove();
     } else if($('#date').size() > 0) {
       var $date = $('<span id="date" />').attr('title', date).timeago();
       $('#date').replaceWith($date);
@@ -94,4 +92,4 @@ var app = {
       $date.fadeIn();
     }
   }
-}
+};
