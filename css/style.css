@@ -4,9 +4,8 @@ html {
   min-width: 600px;
 }
 header, footer {
-  font: .8em "Trebuchet MS", Helvetica, sans-serif;
-  padding: .5em 1em;
-  position: absolute;
+  font: .75em "Trebuchet MS", Helvetica, sans-serif;
+  padding: .25em 1em;
 }
 header a, footer a {
   color: #009EA0;
@@ -15,13 +14,10 @@ header a, footer a {
 }
 header {
   right: 0;
-  top: 0;
+  position: absolute;
+  top: 40px;
 }
 footer {
-  bottom: 0;
-  left: 0;
-  min-width: 600px;
-  right: 0;
   text-align: center;
 }
 .row {
@@ -108,7 +104,7 @@ footer {
 .row li.checked input { border-color: #eee; color: #ccc; }
 #big { font-size: 32px; }
 #middle { font-size: 24px; }
-#little { font-size: 18px; }
+#little { font-size: 18px; margin-bottom: 0; }
 #big ul { padding: 39px 0; }
 #middle ul { padding: 11px 0 12px; }
 #little ul { padding: 4px 0; }
