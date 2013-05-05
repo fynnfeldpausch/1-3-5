@@ -43,6 +43,8 @@ var app = {
       $li.addClass('checked').find('input').attr('readonly', true);
       app.store.set($li.attr('id'), true);
     }
+    app.store.set('date', new Date().toISOString());
+    app.showDate();
   },
 
   load: function() {
