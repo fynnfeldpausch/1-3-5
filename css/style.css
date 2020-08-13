@@ -35,11 +35,11 @@ footer {
 }
 .row h1 {
   color: #009EA0;
-  font: 900 256px/1em 'Alegreya', serif;
+  font: 900 192px/1em 'Alegreya', serif;
   margin: 0;
   position: absolute;
   text-shadow: 5px 5px 0px rgba(0,0,0,.2);
-  top: -128px;
+  top: -64px;
 }
 .row h2 {
   bottom: .5em;
